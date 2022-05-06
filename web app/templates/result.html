@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pneumonia detector</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#000033">
+
+<div class="container">
+  <h1 class="jumbotron bg-primary" style=" text-align: center; color:#000033">Chest X-ray Classfication for the detection of Pneumonia</h1>
+  <br>
+    {% if prediction %}
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-5">
+            <img src="{{img_path}}" height="250px" width="250px" >
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-5">
+            <h3 style=" text-align: center; color:#b3b3b3"> Result : {{result}} - <i> {{prediction}} %  of possibility</i></h3>
+        </div>
+    </div>
+
+    <br>
+    <form class="form-horizontal" action="/" method="get" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="col-sm-offset-5 col-sm-5">
+            <button type="submit" class="btn btn-primary">Back</button>
+          </div>
+        </div>
+    </form>
+	{% endif %}
+
+
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
